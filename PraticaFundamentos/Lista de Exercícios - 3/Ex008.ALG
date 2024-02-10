@@ -1,4 +1,8 @@
 algoritmo "Ex008"
+//8. Faça um algoritmo que leia 10 valores numéricos inteiros em um vetor e
+//três valores inteiros nas variáveis A B e C. Após a leitura, informe o número
+//de vezes que os números A, B e C aparecem no vetor.
+
 var
   I: Inteiro //Contador
   A, B, C: Inteiro //Var A, B, C

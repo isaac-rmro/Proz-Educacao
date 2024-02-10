@@ -1,4 +1,8 @@
 algoritmo "Ex006"
+//6. Faça um algoritmo para ler um vetor com 10 elementos e inverter a posição
+//destes elementos, de tal modo que o primeiro elemento venha a ser o último
+//depois da inversão.
+
 var
   I: Inteiro //Var contadora
   Num: Vetor[1..10] de Inteiro //Vetor de 10 posições

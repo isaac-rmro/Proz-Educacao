@@ -1,4 +1,7 @@
 algoritmo "Ex004"
+//4. Leia uma matriz 3x3 e calcule a soma dos elementos que estão na diagonal
+//principal
+
 var
   M: Vetor[1..3,1..3] de Inteiro //Matriz 3x3
   l, c: Inteiro //Linha e Coluna

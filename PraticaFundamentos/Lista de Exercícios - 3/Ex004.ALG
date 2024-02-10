@@ -1,5 +1,5 @@
 algoritmo "Ex004"
-//Crie um algoritmo para ler 10 numeros inteiros, armazenar em um vetor e
+//4. Crie um algoritmo para ler 10 numeros inteiros, armazenar em um vetor e
 //mostrar no final, os que forem maiores ou igual a 10
 var
   I: Inteiro //Var contadora

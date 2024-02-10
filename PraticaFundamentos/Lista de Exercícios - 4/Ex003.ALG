@@ -1,4 +1,7 @@
 algoritmo "Ex003"
+//3. Leia uma matriz 4x4, imprima na tela a matriz e retorne a localização
+//(linha e coluna) do maior valor
+
 var
   M: Vetor[1..4,1..4] de Inteiro //Matriz de 4x4
   l, c, Lin, Colun: Inteiro //Var para percorrer a matriz

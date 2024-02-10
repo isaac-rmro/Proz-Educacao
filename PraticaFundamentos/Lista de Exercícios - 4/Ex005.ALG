@@ -1,4 +1,11 @@
 algoritmo "Ex005"
+//5. Faça um programa que leia uma matriz 3x6 com valores reais.
+//a. Imprima a soma de todos os elementos das colunas ímpares;
+//b. Imprima a média dos elementos da segunda e da quarta colunas;
+//c. Substitua os valores da sexta coluna pela soma dos valores da primeira e
+//segunda colunas;
+//d. Imprima a matriz modificada.
+
 var
   M: Vetor[1..3,1..6] de Inteiro
   l, c: Inteiro

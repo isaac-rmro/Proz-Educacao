@@ -1,4 +1,8 @@
 algoritmo "Ex002"
+//2. Faça um programa que preencha uma matriz 4x4 com o produto dos índices da
+//linha e da coluna de cada elemento. Em seguida imprima na tela a matriz
+//obtida.
+
 var
   Mat: Vetor[1..4,1..4] de Inteiro //Matriz 4x4
   l, c: Inteiro //Linha e Coluna para percorrer a matriz

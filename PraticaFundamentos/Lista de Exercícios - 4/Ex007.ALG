@@ -1,4 +1,14 @@
 algoritmo "Ex007"
+//7. Faça um programa que leia duas matrizes 3x3 com valores reais. Ofereça ao
+//usuário um menu de opções:
+//a. somar as duas matrizes
+//b. subtrair a primeira matriz da segunda
+//c. adicionar um valor informado pelo usuário às duas matrizes;
+//d. imprimir as matrizes na tela
+//Nas duas primeiras opções uma terceira matriz 3x3 deve ser criada.
+//Na terceira opção o valor da constante deve ser lido e o resultado
+//adicionado aos elementos da própria matriz
+
 var
   Mat1: Vetor[1..2,1..2] de Real
   Mat2: Vetor[1..2,1..2] de Real

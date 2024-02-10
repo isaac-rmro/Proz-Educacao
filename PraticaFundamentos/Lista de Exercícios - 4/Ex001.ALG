@@ -1,4 +1,7 @@
 algoritmo "Ex001"
+//1. Declare uma matriz 5x5. Preencha com 1 a diagonal principal e com 0 os
+//demais elementos. Escreva ao final a matriz obtida.
+
 var
   I: Inteiro //Indice
   Mat: Vetor[1..5,1..5] de Inteiro //Matriz de 5x5
