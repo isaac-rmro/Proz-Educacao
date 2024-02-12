@@ -7,25 +7,25 @@ algoritmo "Ex005"
 //d. Imprima a matriz modificada.
 
 var
-  M: Vetor[1..3,1..6] de Inteiro
-  l, c: Inteiro
-  Impar: Inteiro
-  cont: Inteiro
-  SomaColun: Inteiro
-  Media: Real
-  SomaColuns: Inteiro
+  M: Vetor[1..3,1..6] de Inteiro //Matriz 3x6
+  l, c: Inteiro //Linha e Coluna da matriz
+  Impar: Inteiro //Var para guarda de numero impar
+  cont: Inteiro //Var contadora
+  SomaColun: Inteiro //Var para soma das colunas
+  Media: Real //Var para media
+  SomaColuns: Inteiro //Var para guarda de resultado das somas da colunas
   
-Funcao VerColuna(numero: Inteiro): Inteiro
+Funcao VerColuna(numero: Inteiro): Inteiro //Verfica se há algum numero impar
 inicio
-  Retorne Impar + numero
+  Retorne Impar + numero //Se sim irá soma-lo a variavel impar
 FimFuncao
 
-Funcao SomaColuna(numero: Inteiro): Inteiro
+Funcao SomaColuna(numero: Inteiro): Inteiro //Soma as colunas
 inicio
   Retorne SomaColun + numero
 FimFuncao
 
-Funcao SomaColunas(): Inteiro
+Funcao SomaColunas(): Inteiro // Preenche a coluna com os resultados
 var
   soma: Inteiro
 inicio
@@ -36,7 +36,7 @@ inicio
 FimFuncao
 
 inicio
-  Para l de 1 ate 3 faca
+  Para l de 1 ate 3 faca //Preenche a matriz com 0 e 1
     Para c de 1 ate 6 faca
       Se (c = 1) ou (c = 2)entao
         M[l,c] <- 1
@@ -48,13 +48,13 @@ inicio
   
   cont <- 0
   
-  Para l de 1 ate 3 faca
+  Para l de 1 ate 3 faca //Verifica numeros impares
     Para c de 1 ate 6 faca
       Se (c%2 <> 0)entao
         Impar <- VerColuna(M[l,c])
       FimSe
 
-      Se (c = 2) ou (c = 4)entao
+      Se (c = 2) ou (c = 4)entao //Condições propostas pelo exercicio
         cont <- cont + 1
         SomaColun <- SomaColuna(M[l,c])
       FimSe
@@ -68,19 +68,20 @@ inicio
   Para l de 1 ate 3 faca
     Para c de 1 ate 6 faca
       Se (c = 6)entao
-        M[l,c] <- SomaColuns
+        M[l,c] <- SomaColuns //Adiciona os resultados dentro da matriz
       FimSe
     FimPara
   FimPara
 
   Para l de 1 ate 3 faca
     Para c de 1 ate 6 faca
-      Escreva(M[l,c])
+      Escreva(M[l,c]) //Exibe a matriz
     FimPara
     EscrevaL()
   FimPara
 
-  Media <- SomaColun / c
+  Media <- SomaColun / c //Calcula a media
   
+  //Exibe o resultado
   Escreva("MEDIA DOS ELEMENTOS DA SEGUNDA E QUARTA COLUNA: ", Media)
 fimalgoritmo

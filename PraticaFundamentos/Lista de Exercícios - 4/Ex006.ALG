@@ -7,17 +7,17 @@ algoritmo "Ex006"
 //reprovado. O valor de aprovação é 7 na média das notas.
 
 var
-  I, J, Cont: Inteiro
-  Gabarito: Vetor[1..10] de Caractere
-  ValidaResp: Logico
-  Aluno: Vetor[1..3] de Inteiro
-  RespAluno: Vetor[1..30] de Caractere
-  ContQuestao: Inteiro
-  TotAluno: Vetor[1..3] de Inteiro
-  MediaTurma: Real
-  Sit: Caractere
+  I, J, Cont: Inteiro //Var's contadoras
+  Gabarito: Vetor[1..10] de Caractere //Vetor para guarda de gabarito
+  ValidaResp: Logico //Validação de resposta
+  Aluno: Vetor[1..3] de Inteiro //Vetor para cada aluno
+  RespAluno: Vetor[1..30] de Caractere //Vetor para cada resposta de aluno
+  ContQuestao: Inteiro //Var contadora de questão 1 a 10
+  TotAluno: Vetor[1..3] de Inteiro //Total de cada aluno
+  MediaTurma: Real //Media da turma
+  Sit: Caractere //Var para situacao do aluno
   
-Funcao VerGabarito(resposta: Caractere): Logico
+Funcao VerGabarito(resposta: Caractere): Logico //Aceita apenas (a,b,c,d)
 var
   valida: Logico
 inicio
@@ -25,7 +25,7 @@ inicio
   Retorne valida
 FimFuncao
 
-Procedimento MensagemErro()
+Procedimento MensagemErro() //Mensagem de erro
 inicio
   Se (ValidaResp = Falso)entao
     EscrevaL()
@@ -33,31 +33,31 @@ inicio
   FimSe
 FimProcedimento
 
-Procedimento VerAluno()
+Procedimento VerAluno() //Cadastra o aluno
 inicio
   Escreva(I, "° - DIGITE O NUMERO DA MATRICULA: ")
     Leia(Aluno[I])
 FimProcedimento
 
-Procedimento Preenche()
+Procedimento Preenche() //Preenche cada questao
 inicio
   Escreva("RESPOSTA PARA ", ContQuestao, "° QUESTÃO: ")
     Leia(RespAluno[J])
 FimProcedimento
 
-Procedimento MostraResult()
+Procedimento MostraResult() //Mostra o resultado do aluno
 inicio
   EscrevaL("QUESTÃO ", ContQuestao, "°: ", RespAluno[J])
 FimProcedimento
 
-Procedimento MostraNota()
+Procedimento MostraNota() //Mostra a nota total do aluno e sua situacao
 inicio
   EscrevaL("NOTA ALUNO: ", TotAluno[I])
   EscrevaL("SITUACAO: ", Sit)
   EscrevaL()
 FimProcedimento
 
-Funcao VerMedia(nota1,nota2,nota3: Inteiro): Real
+Funcao VerMedia(nota1,nota2,nota3: Inteiro): Real //Calculo da media
 var
   m: Real
 inicio
@@ -65,7 +65,7 @@ inicio
   Retorne m
 FimFuncao
 
-Funcao VerSit(nota: Inteiro): Caractere
+Funcao VerSit(nota: Inteiro): Caractere //Verifica a situacao atual do aluno
 var
   situacao: Caractere
 inicio
@@ -78,12 +78,12 @@ inicio
 FimFuncao
 
 inicio
-  Para I de 1 ate 10 faca
+  Para I de 1 ate 10 faca //Solicita o gabarito da prova
     Repita
       Escreva("RESPOSTA PARA ", I, "° QUESTÃO: ")
       Leia(Gabarito[I])
-      ValidaResp <- VerGabarito(Gabarito[I])
-      MensagemErro()
+      ValidaResp <- VerGabarito(Gabarito[I]) //Funcao para validar as respostas
+      MensagemErro() //Exibe a mensagem de erro caso seja um dado invalido
     Ate(ValidaResp = Verdadeiro)
   FimPara
   
@@ -91,17 +91,17 @@ inicio
   
   //Aluno
   
-  Para I de 1 ate 3 faca
-    Escolha I
+  Para I de 1 ate 3 faca //3 alunos
+    Escolha I //Cada aluno tem seu preenchimento da prova
       Caso 1
-        ContQuestao <- 0
+        ContQuestao <- 0 //Reinicia o contador de contador de questao para exibição
         VerAluno()
         Para J de 1 ate 10 faca
           ContQuestao <- ContQuestao + 1
           Repita
-            Preenche()
-            ValidaResp <- VerGabarito(RespAluno[J])
-            MensagemErro()
+            Preenche() //Preenche as questoes
+            ValidaResp <- VerGabarito(RespAluno[J]) //Verifica os resultados
+            MensagemErro() //Exibe erro
           Ate(ValidaResp = Verdadeiro)
         FimPara
 
@@ -193,6 +193,3 @@ inicio
     FimSe
   FimPara
 fimalgoritmo
-
-//Questão vale 1 ponto
-//3 alunos + Matricula(Numero Inteiro) + Respostas

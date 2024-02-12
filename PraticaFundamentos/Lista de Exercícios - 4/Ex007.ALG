@@ -10,17 +10,17 @@ algoritmo "Ex007"
 //adicionado aos elementos da própria matriz
 
 var
-  Mat1: Vetor[1..2,1..2] de Real
-  Mat2: Vetor[1..2,1..2] de Real
-  l,c: Inteiro
-  Opcao: Inteiro
-  Mat3: Vetor[1..3,1..3] de Real
-  i,j: Inteiro
-  Resposta: Caractere
-  Vlr: Inteiro
+  Mat1: Vetor[1..2,1..2] de Real //1° Matriz
+  Mat2: Vetor[1..2,1..2] de Real //2° Matriz
+  l,c: Inteiro //linha e coluna
+  Opcao: Inteiro //Guarda de opcao vinda do teclado
+  Mat3: Vetor[1..3,1..3] de Real //3° Matriz
+  i,j: Inteiro //linha e coluna
+  Resposta: Caractere //Var para respota
+  Vlr: Inteiro //Valor
   
 inicio
-  EscrevaL("PRIMEIRA MATRIZ")
+  EscrevaL("PRIMEIRA MATRIZ") //Preenche a Matriz
   Para l de 1 ate 2 faca
     Para c de 1 ate 2 faca
       Escreva("POSIÇÃO [ ", l, ",", c, " ]: ")
@@ -30,7 +30,7 @@ inicio
   
   EscrevaL()
   
-  EscrevaL("SEGUNDA MATRIZ")
+  EscrevaL("SEGUNDA MATRIZ") //Preenche a Matriz
   Para l de 1 ate 2 faca
     Para c de 1 ate 2 faca
       Escreva("POSIÇÃO [ ", l, ",", c, " ]: ")
@@ -38,10 +38,11 @@ inicio
     FimPara
   FimPara
 
-  Para c de 1 ate 3 faca
+  Para c de 1 ate 3 faca //Preenche a Matriz
     Mat3[3,c] <- 0
   FimPara
   
+  //Exibe um menu de opções
   Repita
   LimpaTela
   EscrevaL("Escolha uma opção")
@@ -57,7 +58,7 @@ inicio
         Para c de 1 ate 3 faca
           Para i de 1 ate 2 faca
             Para j de 1 ate 2 faca
-              Mat3[l,c] <- Mat1[i,j] + Mat2[i,j]
+              Mat3[l,c] <- Mat1[i,j] + Mat2[i,j] //Soma
             FimPara
           FimPara
         FimPara
@@ -67,13 +68,14 @@ inicio
         Para c de 1 ate 3 faca
           Para i de 1 ate 2 faca
             Para j de 1 ate 2 faca
-              Mat3[l,c] <- Mat1[i,j] - Mat2[i,j]
+              Mat3[l,c] <- Mat1[i,j] - Mat2[i,j] //Subtrai
             FimPara
           FimPara
         FimPara
       FimPara
     Caso 3
-      Escreva("DIGITE UM VALOR: ")
+      Escreva("DIGITE UM VALOR: ") //Troca o valor digitado para um lugar
+      //Dentro da 1° e 2° Matriz
         Leia(Vlr)
         Mat1[1,2] <- Vlr
         Mat2[1,2] <- Vlr
@@ -101,7 +103,7 @@ inicio
       EscrevaL("TERCEIRA MATRIZ")
       Para l de 1 ate 3 faca
         Para c de 1 ate 3 faca
-          Escreva(Mat3[l,c])
+          Escreva(Mat3[l,c]) //Exibe as matrizes
         FimPara
         EscrevaL()
       FimPara

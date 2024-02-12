@@ -1,11 +1,11 @@
 algoritmo "IMC"
 var
-  Peso, Altura: Real
-  IMC: Real
-  Class: Caractere
-  Valida: Logico
+  Peso, Altura: Real //Peso e Altura
+  IMC: Real //Calculo do imc
+  Class: Caractere //Classifica o imc
+  Valida: Logico //Valida a entrada de dados
 
-Funcao VerValida(peso,altura: Real): Logico
+Funcao VerValida(peso,altura: Real): Logico //Pesos Validos
 var
   continuar: logico
 inicio
@@ -17,13 +17,13 @@ inicio
   Retorne continuar
 FimFuncao
   
-Procedimento Msg()
+Procedimento Msg() //Mensagem de error
 inicio
   LimpaTela
   EscrevaL("Insira um valor válido !!")
 FimProcedimento
 
-Funcao VerClass(indice: Real): Caractere
+Funcao VerClass(indice: Real): Caractere //Verifica a classificacao do imc
 var
   classifica: Caractere
 inicio
@@ -52,7 +52,7 @@ inicio
 FimFuncao
 
 inicio
-  EscrevaL("Insira suas informações")
+  EscrevaL("Insira suas informações") //Solicita peso e altura
   Repita
     Escreva("Peso(kg): ")
       Leia(Peso)
@@ -65,11 +65,12 @@ inicio
     FimSe
   Ate (Valida = Verdadeiro)
   
-  IMC <- Peso / Altura ^ 2
-  Class <- VerClass(IMC)
+  IMC <- Peso / Altura ^ 2 //Calculo do imc
+  Class <- VerClass(IMC) //Mensagem de classificacao
   
   LimpaTela
   
+  //Exibicao de resultados
   EscrevaL("IMC: ", IMC:3:1)
   Escreva("CLASSIFICAÇÃO: ", Class)
 fimalgoritmo
