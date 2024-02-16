@@ -12,7 +12,7 @@ Var
   ValidaNota: Logico
   Media: Vetor[0..14] de Real
   
-Procedimento CadastroNota(mat: Inteiro)
+Procedimento CadastroNota(mat: Inteiro) //Cadastra Notas
 inicio
   Para Cont de 0 ate 14 faca
     Se (mat = Matricula[Cont]) e (PosicaoAluno[Cont,0] = Matricula[Cont])entao
@@ -34,7 +34,7 @@ inicio
   FimPara
 FimProcedimento
 
-Funcao VerMedia(nota1,nota2,nota3: Real): Real
+Funcao VerMedia(nota1,nota2,nota3: Real): Real //Obtem a media
 inicio
   Retorne (nota1+nota2+nota3)/3
 FimFuncao
@@ -44,7 +44,7 @@ Inicio
   Disciplina[1] <- "Segurança"
   Disciplina[2] <- "Desenv_Web"
   
-  Repita
+  Repita //Menu de opcoes
     EscrevaL("[1] CADASTRO NOVO ALUNO")
     EscrevaL("[2] NOTAS")
     EscrevaL("[3] CONSULTAR NOTAS DE ALUNO")
@@ -55,34 +55,35 @@ Inicio
 
     Escolha Opcao
       Caso 1
-        Escreva("DIGITE A MATRICULA: ")
+        Escreva("DIGITE A MATRICULA: ") //Cadastra um aluno
           Leia(Matricula[Cont])
         Escreva("NOME DO ALUNO: ")
           Leia(Aluno[Cont])
         Escreva("IDADE: ")
           Leia(Idade[Cont])
-        PosicaoAluno[Cont,0] <- Matricula[Cont]
+        PosicaoAluno[Cont,0] <- Matricula[Cont] //E obtem-se a posicao
         PosicaoAluno[Cont, 1] <- Cont
         Cont <- Cont + 1
       Caso 2
-        Escreva("DIGITE A MATRICULA: ")
+        Escreva("DIGITE A MATRICULA: ") //Solicita matricula
           Leia(VerMatricula)
           CadastroNota(VerMatricula)
       Caso 3
-        Escreva("DIGITE A MATRICULA: ")
+        Escreva("DIGITE A MATRICULA: ") //Solicita matricula
           Leia(VerMatricula)
         Para Cont de 0 ate 14 faca
-          Se(VerMatricula = Matricula[Cont])entao
+          Se(VerMatricula = Matricula[Cont])entao //Exibe informacoes sobre o aluno
             EscrevaL("MATRICULA: ", Matricula[Cont])
             EscrevaL("ALUNO: ", Aluno[Cont])
             EscrevaL("IDADE: ", Idade[Cont])
             Para I de 0 ate 2 faca
-              EscrevaL(Disciplina[I], ": ", Nota[Cont,I])
+              EscrevaL(Disciplina[I], ": ", Nota[Cont,I]) //Exibe as notas
+              //da disciplina
             FimPara
           FimSe
         FimPara
       Caso 4
-        Escreva("DIGITE A MATRICULA: ")
+        Escreva("DIGITE A MATRICULA: ") //Calcula a media e a exibe
           Leia(VerMatricula)
         Para Cont de 0 ate 14 faca
           Se(VerMatricula = Matricula[Cont])entao
@@ -93,7 +94,7 @@ Inicio
           FimSe
         FimPara
     FimEscolha
-    Escreva("VOLTAR AO MENU[S/N]: ")
+    Escreva("VOLTAR AO MENU[S/N]: ") //Repete tudo
       Leia(Respt)
     LimpaTela
   Ate(Respt = "N")

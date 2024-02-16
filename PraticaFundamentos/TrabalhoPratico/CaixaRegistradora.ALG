@@ -6,6 +6,7 @@ var
   I: Inteiro
   
 inicio
+  //Valores
   Cedula[0] <- 100
   Cedula[1] <- 50
   Cedula[2] <- 20
@@ -19,22 +20,24 @@ inicio
   Moeda[4] <- 0.05
   
   Escreva("DIGITE O VALOR TOTAL DA COMPRA: ")
-    Leia(TotValor)
+    Leia(TotValor) //Valor total da compra
   Escreva("DIGITE O VALOR RECEBIDO: ")
-    Leia(ValorRecebido)
+    Leia(ValorRecebido) //Valor recebido pelo cliente
 
-  Troco <- ValorRecebido - TotValor
+  Troco <- ValorRecebido - TotValor //Calcula o troco
   
-  EscrevaL("TROCO: ", Troco)
+  EscrevaL("TROCO: ", Troco) //Exibe o troco
   
-  Para I de 0 ate 5 faca
-    QtdTroco <- Int(Troco/Cedula[I])
-    Se (QtdTroco > 0)entao
+  Para I de 0 ate 5 faca //Percorre todas as cedulas
+    QtdTroco <- Int(Troco/Cedula[I]) //Recebe a divisao inteira do troco e cedula
+    Se (QtdTroco > 0)entao //Enquanto troco for maior que 0
       Escreval("QuantNotas de ",  Cedula[I]," reais: ", QtdTroco)
-      Troco <- Troco - (QtdTroco * Cedula[I])
+      Troco <- Troco - (QtdTroco * Cedula[I]) //Ele ira calcular a quantidade
+      //de nota para a var QtdTroco alcançar a Var original Troco
     FimSe
   FimPara
   
+  //O mesmo para as moedas so que agora com valores menores
   Para I de 0 ate 4 faca
     QtdTroco <- Int(Troco/Moeda[I])
     Se (QtdTroco > 0)entao
